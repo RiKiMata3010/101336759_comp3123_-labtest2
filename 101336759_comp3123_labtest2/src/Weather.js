@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect,useState } from "react";
+import './Weather.css'
+
 let Weather = () => {
     let [weather,setWeather] = useState();
     let getWeather = () =>{
@@ -9,26 +11,29 @@ let Weather = () => {
             console.log(res.data);
         })
     }
+
     useEffect(()=>{
         getWeather();
     },[])
     let weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][new Date().getDay()]
+
     let n =  new Date();
     let y = n.getFullYear();
     let m = n.getMonth() + 1;
     let d = n.getDate();
 
     console.log(weekday);
+
     return(
-        <div style={{display:'flex',justifyContent:'center',marginTop:40,color:'white'}}>
+        <div class="container">
         
-        <div style={{width:400,height:500,backgroundColor:'#0c0d0d'}}>
-        <h4> Weather App </h4>
-        <hr/>
-           <div style={{marginTop:20}}>
+        <h4> Weather Forecast </h4>
+        
+           <div class="weekday">
             {weekday}
            </div>
-           <div style={{marginTop:20}}>
+
+           <div class="openweather">
            <img src={`https://openweathermap.org/img/wn/${weather?.weather[0]?.icon}@2x.png`}/>
            <br/>
            <h1>
@@ -39,17 +44,26 @@ let Weather = () => {
            </h3>
            Description: {weather?.weather[0]?.description} 
            </div>
-           <div style={{marginTop:20}}>
-            Lng:{weather?.coord?.lon} Lat:{weather?.coord?.lat}
+
+           <br/>
+
+           <div class="coordinates">
+            Longitude:{weather?.coord?.lon} --- Latitude:{weather?.coord?.lat}
            </div>
-           <div style={{marginTop:20}}>
-            Wind Speed: {weather?.wind?.speed} &nbsp; &nbsp; &nbsp; &nbsp; Gust:{weather?.wind?.gust}
+
+           <br/>
+
+           <div class="windspeed">
+            Wind Speed: {weather?.wind?.speed} --- Gust of Wind:{weather?.wind?.gust}
            </div>
-           <div>
+
+           <br/>
+
+           <div class="date">
             {'Date : ' + m + "/" + d + "/" + y}
            </div>
         </div>
-        </div>
+        
     )
 }
 

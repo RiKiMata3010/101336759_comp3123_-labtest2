@@ -1,0 +1,26 @@
+.container {
+    overflow: hidden;
+    z-index: 10;
+    position: relative;
+    margin: 150px auto;
+    height: 600px;
+    width: 400px;
+    background-color: #F17022;
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px rgba(0,0,0,0.2);
+}
+.weekday {
+    margin-top: 20px;
+}
+.openweather {
+    font-family: "Roboto", sans-serif;
+}
+.coordinates {
+    font-family: "Roboto", sans-serif;
+}
+.windspeed {
+    font-family: "Roboto", sans-serif;
+}
+.date { 
+    font-family: "Roboto", sans-serif;
+}
