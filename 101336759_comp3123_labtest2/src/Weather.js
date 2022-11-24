@@ -13,7 +13,11 @@ let Weather = () => {
         getWeather();
     },[])
     let weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][new Date().getDay()]
-    
+    let n =  new Date();
+    let y = n.getFullYear();
+    let m = n.getMonth() + 1;
+    let d = n.getDate();
+
     console.log(weekday);
     return(
         <div style={{display:'flex',justifyContent:'center',marginTop:40,color:'white'}}>
@@ -41,8 +45,8 @@ let Weather = () => {
            <div style={{marginTop:20}}>
             Wind Speed: {weather?.wind?.speed} &nbsp; &nbsp; &nbsp; &nbsp; Gust:{weather?.wind?.gust}
            </div>
-           <div style={{marginTop:40}}>
-            Mon
+           <div>
+            {'Date : ' + m + "/" + d + "/" + y}
            </div>
         </div>
         </div>
