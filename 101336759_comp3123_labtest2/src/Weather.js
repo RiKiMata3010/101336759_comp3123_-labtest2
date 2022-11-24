@@ -22,7 +22,7 @@ let Weather = () => {
     return(
         <div style={{display:'flex',justifyContent:'center',marginTop:40,color:'white'}}>
         
-        <div style={{width:400,height:500,backgroundColor:'#5594fa'}}>
+        <div style={{width:400,height:500,backgroundColor:'#0c0d0d'}}>
         <h4> Weather App </h4>
         <hr/>
            <div style={{marginTop:20}}>
